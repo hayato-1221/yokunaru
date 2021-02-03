@@ -1,2 +1,7 @@
 <h1>顧客一覧</h1>
-<%= render @clients %>
+<div>
+  <% @clients.each do |client| %>
+    <p><%= client.name %><%= client.gender %> <%= client.age %> <%=client.address %></p>
+  <% end %>
+</div>
+<hr>

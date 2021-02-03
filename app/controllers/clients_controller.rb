@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.order(:id)
+    @clients = Client.all
   end
 end
