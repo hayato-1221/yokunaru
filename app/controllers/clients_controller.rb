@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
   end
 
   def create
-    Client.create!(name: client_params[:name], gender: client_params[:gender], age: client_params[:age], address: client_params[:address])
+    client = current_user.clients.create!(client_params)
   end
 
   private
