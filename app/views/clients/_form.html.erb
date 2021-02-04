@@ -1,0 +1,19 @@
+<%= form_with model: @client, local: true do |f| %>
+  <p>
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :gender, "性別" %>
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :age, "年齢" %>
+    <%= f.number_field :age %>
+  </p>
+  <p>
+    <%= f.label :address, "住所" %>
+    <%= f.text_area :address %>
+  </p>
+  <%= f.submit "登録" %>
+<% end %>

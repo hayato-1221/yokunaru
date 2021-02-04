@@ -11,6 +11,16 @@ class ClientsController < ApplicationController
     client = current_user.clients.create!(client_params)
   end
 
+  def edit
+    @client = Client.find(params[:id])
+  end
+
+  def updated
+    @client = Client.find(params[:id])
+    client.update!(client_params)
+    redirect_to client
+  end
+
   private
 
   def client_params
