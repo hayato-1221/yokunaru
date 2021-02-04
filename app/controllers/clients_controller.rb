@@ -11,6 +11,10 @@ class ClientsController < ApplicationController
     client = current_user.clients.create!(client_params)
   end
 
+  def show
+    @client = Client.find(params[:id])
+  end
+
   def edit
     @client = Client.find(params[:id])
   end
