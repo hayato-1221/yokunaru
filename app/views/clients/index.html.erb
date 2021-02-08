@@ -1,4 +1,6 @@
 <h1>顧客一覧</h1>
 <% @clients.each do |client| %>
   <p><%= client.name %>  <%= client.gender %>  <%= client.age %>  <%=client.address %></p>
+  <%= link_to "削除", client_path(client), method: :delete, data: {confirm: "削除しますか?"} %>
+  <%= link_to "編集", edit_client_path(client) %>
 <% end %>
