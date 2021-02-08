@@ -4,8 +4,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    log = log.create!(log_params)
-    redirect_to log
+    Log.create(log_params)
   end
 
   private
