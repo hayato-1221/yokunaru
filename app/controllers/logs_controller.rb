@@ -8,8 +8,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    binding.pry
-    Log.create(log_params)
+    Log.create!(log_params)
   end
 
   private
