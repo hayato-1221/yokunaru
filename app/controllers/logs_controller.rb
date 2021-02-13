@@ -8,7 +8,8 @@ class LogsController < ApplicationController
   end
 
   def create
-    Log.create!(log_params)
+    client = Client.find(current_user.id)
+    @log = client.logs.create!(log_params)
   end
 
   private

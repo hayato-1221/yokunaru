@@ -3,6 +3,7 @@ class CreateLogs < ActiveRecord::Migration[6.1]
     create_table :logs do |t|
       t.date :date
       t.integer :fee
+      t.references :client
 
       t.timestamps
     end
