@@ -15,6 +15,6 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:date, :fee)
+    params.require(:log).permit(:date, :fee).merge(client_id: params[:client_id])
   end
 end
