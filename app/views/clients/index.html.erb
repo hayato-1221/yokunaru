@@ -3,4 +3,5 @@
   <p><%= client.name %>  <%= client.gender %>  <%= client.age %>  <%=client.address %></p>
   <%= link_to "削除", client_path(client), method: :delete, data: {confirm: "削除しますか?"} %>
   <%= link_to "編集", edit_client_path(client) %>
+  <%= link_to "詳細", client %>
 <% end %>
