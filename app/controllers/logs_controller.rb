@@ -8,13 +8,13 @@ class LogsController < ApplicationController
   end
 
   def create
-    client = Client.find(current_user.id)
+    client = Client.find(params[:id])
     @log = client.logs.create!(log_params)
   end
 
   private
 
   def log_params
-    params.require(:log).permit(:date, :fee).merge(client_id: params[:client_id])
+    params.require(:log).permit(:date, :fee)
   end
 end
