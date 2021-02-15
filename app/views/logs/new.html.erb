@@ -1,5 +1,5 @@
 <h1>新規入力</h1>
-<%= form_with model: @log, local:true do |f| %>
+<%= form_with model: [@client, @log], local:true do |f| %>
   <div>
     <%= f.label :date, "日付" %>
     <%= f.date_field :date %>
