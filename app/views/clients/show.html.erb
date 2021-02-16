@@ -1,3 +1,40 @@
 <h1>顧客詳細</h1>
-<p><%= @client.name %>  <%= @client.gender %>  <%= @client.age %>  <%= @client.address %></p>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>性別</th>
+      <th>年齢</th>
+      <th>住所</th>
+    </tr>
+  </thead>
+  <tbody>
+    <p>
+      <td><%= @client.name %></td>
+      <td><%= @client.gender %></td>
+      <td><%= @client.age %></td>
+      <td><%= @client.address %></td>
+    </p>
+  </tbody>
+</table>
 <%= link_to "通院履歴登録", new_client_log_path(@client) %>
+<%= link_to "通院履歴詳細", client_logs_path(@client) %>
+<h2>通院履歴</h2>
+<table>
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>金額</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @logs.each do |log| %>
+        <p>
+          <td><%= log.date %></td>
+          <td><%= log.fee %></td>
+        </p>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

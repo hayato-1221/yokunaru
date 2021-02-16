@@ -1,6 +1,23 @@
-<% @logs.each do |log| %>
-  <p>
-    <%= log.date %>
-    <%= log.fee %>
-  </p>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>金額</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @logs.each do |log| %>
+        <p>
+          <td><%= log.date %></td>
+          <td><%= log.fee %></td>
+        </p>
+        <p>
+          <td><%= link_to "削除", client_log_path(log), method: :delete, data: {confirm: "削除しますか?"} %>
+            <%= link_to "編集", edit_client_log_path %>
+          </td>
+        </p>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

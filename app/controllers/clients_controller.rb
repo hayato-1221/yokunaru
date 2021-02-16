@@ -13,6 +13,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @logs = Log.all
   end
 
   def edit

@@ -13,6 +13,20 @@ class LogsController < ApplicationController
     @log = client.logs.create!(log_params)
   end
 
+  def edit
+    @log = Log.find(params[:id])
+  end
+
+  def update
+    log = Log.find(params[:id])
+    log.update!(log_params)
+  end
+
+  def destroy
+    log = Log.find(paramas[:id])
+    log.destroy!
+  end
+
   private
 
   def log_params

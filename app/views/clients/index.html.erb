@@ -1,7 +1,29 @@
+<%= link_to "新規顧客登録", new_client_path %>
 <h1>顧客一覧</h1>
-<% @clients.each do |client| %>
-  <p><%= client.name %>  <%= client.gender %>  <%= client.age %>  <%=client.address %></p>
-  <%= link_to "削除", client_path(client), method: :delete, data: {confirm: "削除しますか?"} %>
-  <%= link_to "編集", edit_client_path(client) %>
-  <%= link_to "詳細", client %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>性別</th>
+      <th>年齢</th>
+      <th>住所</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <p>
+          <td><%= client.name %></td>
+          <td><%= client.gender %></td>
+          <td><%= client.age %></td>
+          <td><%=client.address %></td>
+        </p>
+        <p>
+          <td><%= link_to "削除", client_path(client), method: :delete, data: {confirm: "削除しますか?"} %>
+            <%= link_to "編集", edit_client_path(client) %>
+            <%= link_to "詳細", client %></td>
+        </p>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
