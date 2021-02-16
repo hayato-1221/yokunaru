@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   def index
     @client = Client.find(params[:client_id])
-    # @logs = Log.all
+    @logs = Log.find(params[:id])
   end
 
   def new
