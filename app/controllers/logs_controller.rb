@@ -9,10 +9,8 @@ class LogsController < ApplicationController
   end
 
   def create
-    Log.create!(log_params)
-
-    # client = Client.find(params[:id])
-    # @log = client.logs.create!(log_params)
+    client = Client.find(params[:client_id])
+    @log = client.logs.create!(log_params)
   end
 
   private
