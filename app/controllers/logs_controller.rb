@@ -23,7 +23,7 @@ class LogsController < ApplicationController
   end
 
   def destroy
-    log = Log.find(paramas[:id])
+    log = Log.find(params[:id])
     log.destroy!
   end
 
