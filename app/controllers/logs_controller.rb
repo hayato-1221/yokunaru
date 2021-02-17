@@ -1,7 +1,9 @@
 class LogsController < ApplicationController
+  before_action :set_post
+
   def index
     @client = Client.find(params[:client_id])
-    @logs = Log.find(params[:id])
+    @logs = Log.order(:id)
   end
 
   def new
@@ -32,5 +34,9 @@ class LogsController < ApplicationController
 
   def log_params
     params.require(:log).permit(:date, :fee).merge(client_id: params[:clietn_id])
+  end
+
+  def set_post
+    @log = current_user.logs.find(params[:id])
   end
 end
