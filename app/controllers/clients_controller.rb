@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.order(id: :asc)
+    @user = User.find(:id)
+    @clients = Client.order(:id)
   end
 
   def new

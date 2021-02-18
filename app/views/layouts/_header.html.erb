@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-  <%= link_to "顧客一覧", root_path%>
+  <%= link_to "顧客一覧", root_path %>
   <%= link_to "新規投稿ページ", new_client_path %>
+  <%= "【ログイン中のアドレス】#{current_user.email}" %>
   <%= link_to "アカウント編集", edit_user_registration_path %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
 <% else %>

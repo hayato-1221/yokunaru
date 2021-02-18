@@ -26,7 +26,6 @@ class LogsController < ApplicationController
   end
 
   def destroy
-    @client
     log = Log.find(params[:id])
     log.destroy!
     redirect_to client_logs_path
