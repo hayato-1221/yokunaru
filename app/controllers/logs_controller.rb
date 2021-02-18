@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   def index
     @client = Client.find(params[:client_id])
-    @logs = Client.find(params[:client_id]).logs
+    @logs = @client.logs.order(:id)
   end
 
   def new
@@ -15,17 +15,21 @@ class LogsController < ApplicationController
   end
 
   def edit
+    @client = Client.find(params[:client_id])
     @log = Log.find(params[:id])
   end
 
   def update
     log = Log.find(params[:id])
     log.update!(log_params)
+    redirect_to client_logs_path
   end
 
   def destroy
+    @client
     log = Log.find(params[:id])
     log.destroy!
+    redirect_to client_logs_path
   end
 
   private

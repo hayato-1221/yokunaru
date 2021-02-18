@@ -13,8 +13,8 @@
           <td><%= log.fee %></td>
         </p>
         <p>
-          <td><%= link_to "削除", client_log_path(@client, :id), method: :delete, data: {confirm: "削除しますか?"} %>
-            <%= link_to "編集", edit_client_log_path(@client, :id) %>
+          <td><%= link_to "削除", client_log_path(@client, log), method: :delete, data: {confirm: "削除しますか?"} %>
+            <%= link_to "編集", edit_client_log_path(@client, log) %>
           </td>
         </p>
       </tr>

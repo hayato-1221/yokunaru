@@ -1,0 +1,13 @@
+<%= form_with model: [@client, @log], local:true do |f| %>
+  <div>
+    <%= f.label :date, "日付" %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :fee, "料金" %>
+    <%= f.text_field :fee %>
+  </div>
+  <div>
+    <%= f.submit "送信" %>
+  </div>
+<% end %>
