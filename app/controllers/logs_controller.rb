@@ -1,12 +1,11 @@
 class LogsController < ApplicationController
-  before_action :set_post only: %i[index new edit update destroy]
+  before_action :set_post, only: %i[index new edit update destroy]
+
   def index
-    @client = current_user.clients.find(params[:client_id])
     @logs = @client.logs.order(:id)
   end
 
   def new
-    @client = current_user.clients.find(params[:client_id])
     @log = Log.new
   end
 
@@ -16,19 +15,16 @@ class LogsController < ApplicationController
   end
 
   def edit
-    @client = current_user.clients.find(params[:client_id])
     @log = Log.find(params[:id])
   end
 
   def update
-    @client = current_user.clients.find(params[:client_id])
     log = @client.logs.find(params[:id])
     log.update!(log_params)
     redirect_to client_logs_path
   end
 
   def destroy
-    @client = current_user.clients.find(params[:client_id])
     log = @client.logs.find(params[:id])
     log.destroy!
     redirect_to client_logs_path
