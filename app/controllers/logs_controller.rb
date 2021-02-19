@@ -15,7 +15,7 @@ class LogsController < ApplicationController
   end
 
   def edit
-    @log = Log.find(params[:id])
+    @log = @client.logs.find(params[:id])
   end
 
   def update
