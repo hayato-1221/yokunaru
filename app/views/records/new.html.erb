@@ -1,0 +1,24 @@
+<h1>新規登録</h1>
+<%= form_with model: @record, local: ture do |f| %>
+  <div>
+    <%= f.label :subjective, "S（subjective）：主観的情報" %>
+    <%= f.text_area :subjective %>
+  </div>
+  <div>
+    <%= f.label :objective, "O（objective）： 客観的情報" %>
+    <%= f.text_area :objective %>
+  </div>
+  <div>
+    <%= f.label :assessment, "A（assessment）： 評価" %>
+    <%= f.text_area :assessment %>
+  </div>
+  <div>
+    <%= f.label :plan, "P（plan）： 計画（治療）" %>
+    <%= f.text_area :plan %>
+  </div>
+  <div>
+    <%= f.label :memo, "その他メモ" %>
+    <%= f.text_area :memo %>
+  </div>
+  <%= f.submit "登録" %>
+<% end %>

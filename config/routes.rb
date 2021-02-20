@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :clients do
     resources :logs
   end
+  resources :records
 end
