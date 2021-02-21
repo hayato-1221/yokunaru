@@ -1,0 +1,10 @@
+<%= link_to "投稿画面へ", new_record_path %>
+<% @records.each do |record| %>
+  <p>
+    <%= record.subjective %>
+    <%= record.objective %>
+    <%= record.assessment %>
+    <%= record.plan %>
+    <%= record.memo %>
+  </p>
+<% end %>

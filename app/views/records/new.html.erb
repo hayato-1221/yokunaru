@@ -1,24 +1,24 @@
 <h1>新規登録</h1>
-<%= form_with model: @record, local: ture do |f| %>
+<%= form_with model: @record, local: true do |f| %>
   <div>
-    <%= f.label :subjective, "S（subjective）：主観的情報" %>
-    <%= f.text_area :subjective %>
+    <p><%= f.label :subjective, "S（subjective）：主観的情報" %></p>
+    <p><%= f.text_area :subjective %></p>
   </div>
   <div>
-    <%= f.label :objective, "O（objective）： 客観的情報" %>
-    <%= f.text_area :objective %>
+    <p><%= f.label :objective, "O（objective）： 客観的情報" %></p>
+    <p><%= f.text_area :objective %></p>
   </div>
   <div>
-    <%= f.label :assessment, "A（assessment）： 評価" %>
-    <%= f.text_area :assessment %>
+    <p><%= f.label :assessment, "A（assessment）： 評価" %></p>
+    <p><%= f.text_area :assessment %></p>
   </div>
   <div>
-    <%= f.label :plan, "P（plan）： 計画（治療）" %>
-    <%= f.text_area :plan %>
+    <p><%= f.label :plan, "P（plan）： 計画（治療）" %></p>
+    <p><%= f.text_area :plan %></p>
   </div>
   <div>
-    <%= f.label :memo, "その他メモ" %>
-    <%= f.text_area :memo %>
+    <p><%= f.label :memo, "その他メモ" %></p>
+    <p><%= f.text_area :memo %></p>
   </div>
   <%= f.submit "登録" %>
 <% end %>
