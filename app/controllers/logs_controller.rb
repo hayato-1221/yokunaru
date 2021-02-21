@@ -7,6 +7,7 @@ class LogsController < ApplicationController
 
   def new
     @log = Log.new
+    @log.build_record
   end
 
   def create
@@ -33,7 +34,7 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:date, :fee).merge(client_id: params[:client_id])
+    params.require(:log).permit(:date, :fee, record_attributes: [:subjective, :objective, :assessment, :plan, :memo]).merge(client_id: params[:client_id])
   end
 
   def set_post

@@ -8,8 +8,8 @@ class RecordsController < ApplicationController
   end
 
   def create
-    log = @log.find(params[:id])
-    @record = log.records.create!(record_params)
+    @log = Log.find(params[:id])
+    @record = @log.records.create!(record_params)
   end
 
   private
