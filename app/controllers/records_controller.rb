@@ -8,8 +8,26 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @log = Log.find(params[:id])
+    @log = @client.logs.find(params[:log_id])
     @record = @log.records.create!(record_params)
+  end
+
+  def show
+    @record = Record.find(params[:id])
+  end
+
+  def edit
+    @record = Record.find(params[:id])
+  end
+
+  def update
+    record = Record.find(params[:id])
+    record.update!
+  end
+
+  def destroy
+    record = Record.find(params[:id])
+    record.destroy!
   end
 
   private

@@ -5,6 +5,10 @@ class LogsController < ApplicationController
     @logs = @client.logs.order(:id)
   end
 
+  def show
+    @log = @client.logs.find(params[:id])
+  end
+
   def new
     @log = Log.new
     @log.build_record
@@ -34,7 +38,7 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:date, :fee, record_attributes: [:subjective, :objective, :assessment, :plan, :memo]).merge(client_id: params[:client_id])
+    params.require(:log).permit(:date, :fee, record_attributes: [:id, :subjective, :objective, :assessment, :plan, :memo, :record_id]).merge(client_id: params[:client_id])
   end
 
   def set_post

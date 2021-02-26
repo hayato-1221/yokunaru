@@ -1,3 +1,4 @@
+<%= link_to "施術履歴一覧", records_path %>
 <table>
   <thead>
     <tr>
@@ -15,6 +16,7 @@
         <p>
           <td><%= link_to "削除", client_log_path(@client, log), method: :delete, data: {confirm: "削除しますか?"} %>
             <%= link_to "編集", edit_client_log_path(@client, log) %>
+            <%= link_to "詳細", record_path %>
           </td>
         </p>
       </tr>

@@ -7,26 +7,26 @@
     <%= f.label :fee, "料金" %>
     <%= f.text_field :fee %>
   </div>
-  <%= form_with model: @record, local: true do |f| %>
+  <%= f.fields_for :record do |r_f| %>
     <div>
-      <p><%= f.label :subjective, "S（subjective）：主観的情報" %></p>
-      <p><%= f.text_area :subjective %></p>
+      <p><%= r_f.label :subjective, "S（subjective）：主観的情報" %></p>
+      <p><%= r_f.text_area :subjective %></p>
     </div>
     <div>
-      <p><%= f.label :objective, "O（objective）： 客観的情報" %></p>
-      <p><%= f.text_area :objective %></p>
+      <p><%= r_f.label :objective, "O（objective）： 客観的情報" %></p>
+      <p><%= r_f.text_area :objective %></p>
     </div>
     <div>
-      <p><%= f.label :assessment, "A（assessment）： 評価" %></p>
-      <p><%= f.text_area :assessment %></p>
+      <p><%= r_f.label :assessment, "A（assessment）： 評価" %></p>
+      <p><%= r_f.text_area :assessment %></p>
     </div>
     <div>
-      <p><%= f.label :plan, "P（plan）： 計画（治療）" %></p>
-      <p><%= f.text_area :plan %></p>
+      <p><%= r_f.label :plan, "P（plan）： 計画（治療）" %></p>
+      <p><%= r_f.text_area :plan %></p>
     </div>
     <div>
-      <p><%= f.label :memo, "その他メモ" %></p>
-      <p><%= f.text_area :memo %></p>
+      <p><%= r_f.label :memo, "その他メモ" %></p>
+      <p><%= r_f.text_area :memo %></p>
     </div>
   <% end %>
   <%= f.submit "登録" %>
